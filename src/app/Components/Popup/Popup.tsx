@@ -42,7 +42,7 @@ const Popup = () => {
               </div>
             </div>
           </div>
-          <div className="flex items-center justify-center h-8  px-6 py-3 pb-12 sm:px-8">
+          <div className="flex items-center justify-center h-8 px-6 py-3 pb-12 sm:px-8">
             <button
               onClick={() => setIsOpen(true)}
               className="customFont bg-gray-600 text-slate-200 border border-slate-400 border-b-4 font-medium overflow-hidden relative px-4 py-2 rounded-md hover:brightness-150 hover:border-t-4 hover:border-b active:opacity-75 outline-none duration-300 group"
@@ -55,7 +55,7 @@ const Popup = () => {
       </div>
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative p-16 bg-white rounded shadow-lg">
+          <div className="relative p-16 bg-white w-90 rounded shadow-lg ">
             <button
               className="absolute top-0 right-0 mt-2 mr-2 text-gray-500 hover:text-gray-700"
               onClick={() => setIsOpen(false)}
