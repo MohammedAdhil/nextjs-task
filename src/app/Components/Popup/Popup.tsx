@@ -55,7 +55,7 @@ const Popup = () => {
       </div>
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative p-16 bg-white w-90 rounded shadow-lg ">
+          <div className="relative p-16 bg-white w-96 rounded shadow-lg ">
             <button
               className="absolute top-0 right-0 mt-2 mr-2 text-gray-500 hover:text-gray-700"
               onClick={() => setIsOpen(false)}
@@ -71,7 +71,7 @@ const Popup = () => {
               </div>
             </div>
 
-            <h2 className=" customFont mb-4 text-lg font-semibold">
+            <h2 className=" customFont mb-4 text-lg font-semibold text-center">
               {popupContent}
             </h2>
           </div>
