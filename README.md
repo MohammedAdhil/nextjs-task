@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-The live demo link of the project is available [here]("https://nextjs-task-kappa.vercel.app/"). You can access it to see the project in action.
+The live demo link of the project is available https://nextjs-task-kappa.vercel.app . You can access it to see the project in action.
 
 ## Technologies Used
 
