@@ -37,16 +37,19 @@ body {
   src: url("/fonts/MarcellusRegular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
- font-display: fallback;
+  font-display: fallback;
 }
 
-
 .customFont {
-  font-family: 'CustomFont', sans-serif; /* Optional: Set as default font for the body */
+  font-family: "CustomFont", sans-serif;
 }
 
 .bgColorHome {
-  background-image: linear-gradient( 174.2deg,  rgba(255,244,228,1) 7.1%, rgba(240,246,238,1) 67.4% );
+  background-image: linear-gradient(
+    174.2deg,
+    rgba(255, 244, 228, 1) 7.1%,
+    rgba(240, 246, 238, 1) 67.4%
+  );
 }
 
 .box {
@@ -58,10 +61,10 @@ body {
   align-items: center;
   transition: 0.5s;
   z-index: 1;
- }
- 
- .box::before {
-  content: ' ';
+}
+
+.box::before {
+  content: " ";
   position: absolute;
   top: 0;
   left: 50px;
@@ -72,10 +75,10 @@ body {
   border-radius: 8px;
   transform: skewX(15deg);
   transition: 0.5s;
- }
- 
- .box::after {
-  content: '';
+}
+
+.box::after {
+  content: "";
   position: absolute;
   top: 0;
   left: 50;
@@ -86,19 +89,19 @@ body {
   transform: skewX(15deg);
   transition: 0.5s;
   filter: blur(30px);
- }
- 
- .box:hover:before,
- .box:hover:after {
+}
+
+.box:hover:before,
+.box:hover:after {
   transform: skewX(0deg) scaleX(1.3);
- }
- 
- .box:before,
- .box:after {
-  background: linear-gradient(315deg, #ffbc00, #ff0058)
- }
- 
- .box span {
+}
+
+.box:before,
+.box:after {
+  background: linear-gradient(315deg, #ffbc00, #ff0058);
+}
+
+.box span {
   display: block;
   position: absolute;
   top: 0;
@@ -107,10 +110,10 @@ body {
   bottom: 0;
   z-index: 5;
   pointer-events: none;
- }
- 
- .box span::before {
-  content: '';
+}
+
+.box span::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -122,19 +125,19 @@ body {
   opacity: 0;
   transition: 0.1s;
   animation: animate 2s ease-in-out infinite;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08)
- }
- 
- .box span::before {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.box span::before {
   top: -40px;
   left: 40px;
   width: 50px;
   height: 50px;
   opacity: 1;
- }
- 
- .box span::after {
-  content: '';
+}
+
+.box span::after {
+  content: "";
   position: absolute;
   bottom: 0;
   right: 0;
@@ -145,19 +148,19 @@ body {
   backdrop-filter: blur(10px);
   opacity: 0;
   transition: 0.5s;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
   animation-delay: -1s;
- }
- 
- .box span:after {
+}
+
+.box span:after {
   bottom: -40px;
   right: 40px;
   width: 50px;
   height: 50px;
   opacity: 1;
- }
- 
- .box .content {
+}
+
+.box .content {
   position: relative;
   width: 190px;
   height: 254px;
@@ -172,21 +175,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
- }
- 
- .box .content h2 {
+}
+
+.box .content h2 {
   font-size: 20px;
   color: #fff;
   margin-bottom: 10px;
- }
+}
 
-
- .popupHome {
+.popupHome {
   background-image: url("https://i.postimg.cc/sfBVhVSp/pexels-tirachard-kumtanom-112571-733852.jpg");
   background-size: cover;
   background-position: center;
 }
-
 
 .newtons-cradle {
   --uib-size: 50px;
@@ -198,75 +199,78 @@ body {
   justify-content: center;
   width: var(--uib-size);
   height: var(--uib-size);
- }
- 
- .newtons-cradle__dot {
+}
+
+.newtons-cradle__dot {
   position: relative;
   display: flex;
   align-items: center;
   height: 100%;
   width: 25%;
   transform-origin: center top;
- }
- 
- .newtons-cradle__dot::after {
-  content: '';
+}
+
+.newtons-cradle__dot::after {
+  content: "";
   display: block;
   width: 100%;
   height: 25%;
   border-radius: 50%;
   background-color: var(--uib-color);
- }
- 
- .newtons-cradle__dot:first-child {
+}
+
+.newtons-cradle__dot:first-child {
   animation: swing var(--uib-speed) linear infinite;
- }
- 
- .newtons-cradle__dot:last-child {
+}
+
+.newtons-cradle__dot:last-child {
   animation: swing2 var(--uib-speed) linear infinite;
- }
- 
- @keyframes swing {
+}
+
+@keyframes swing {
   0% {
-   transform: rotate(0deg);
-   animation-timing-function: ease-out;
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
   }
- 
+
   25% {
-   transform: rotate(70deg);
-   animation-timing-function: ease-in;
+    transform: rotate(70deg);
+    animation-timing-function: ease-in;
   }
- 
+
   50% {
-   transform: rotate(0deg);
-   animation-timing-function: linear;
+    transform: rotate(0deg);
+    animation-timing-function: linear;
   }
- }
- 
- @keyframes swing2 {
+}
+
+@keyframes swing2 {
   0% {
-   transform: rotate(0deg);
-   animation-timing-function: linear;
+    transform: rotate(0deg);
+    animation-timing-function: linear;
   }
- 
+
   50% {
-   transform: rotate(0deg);
-   animation-timing-function: ease-out;
+    transform: rotate(0deg);
+    animation-timing-function: ease-out;
   }
- 
+
   75% {
-   transform: rotate(-70deg);
-   animation-timing-function: ease-in;
+    transform: rotate(-70deg);
+    animation-timing-function: ease-in;
   }
- }
- 
- .animation-section{
-    display: flex;
-    height: 100vh;
-    background-color: black;
- }
+}
 
- .buttonBg{
-  background-image: radial-gradient( circle 815px at 23.4% -21.8%,  rgba(9,29,85,1) 0.2%, rgba(0,0,0,1) 100.2% );
+.animation-section {
+  display: flex;
+  height: 100vh;
+  background-color: black;
+}
 
- }
+.buttonBg {
+  background-image: radial-gradient(
+    circle 815px at 23.4% -21.8%,
+    rgba(9, 29, 85, 1) 0.2%,
+    rgba(0, 0, 0, 1) 100.2%
+  );
+}
