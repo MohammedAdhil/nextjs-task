@@ -2,27 +2,34 @@
 
 import Head from "next/head";
 import { use, useEffect, useState } from "react";
-import { AiOutlineClose } from "react-icons/ai"; 
+import { AiOutlineClose } from "react-icons/ai";
 
 const Popup = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [popupContent, setPopupContent] = useState("");
 
+  const [isLoading, setIsLoading] = useState(false);
+
   // Function to fetch data from the API route
   async function fetchPopupContent() {
-    const res = await fetch("/api/Popup-Content");
-    if (!res.ok) {
-      throw new Error("Failed to fetch data");
+    setIsLoading(true); 
+    try {
+      const res = await fetch("/api/Popup-Content");
+      if (!res.ok) {
+        throw new Error("Failed to fetch data");
+      }
+      const data = await res.json();
+      setPopupContent(data.content);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsLoading(false); 
     }
-    const data = await res.json();
-    return data.content;
   }
 
   useEffect(() => {
     if (isOpen) {
-      fetchPopupContent()
-        .then((content) => setPopupContent(content))
-        .catch(console.error);
+      fetchPopupContent();
     }
   }, [isOpen]);
   return (
@@ -55,7 +62,7 @@ const Popup = () => {
       </div>
       {isOpen && (
         <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
-          <div className="relative p-16 bg-white w-96 rounded shadow-lg ">
+          <div className="relative p-16 bg-white w-96 h-64 rounded shadow-lg ">
             <button
               className="absolute top-0 right-0 mt-2 mr-2 text-gray-500 hover:text-gray-700"
               onClick={() => setIsOpen(false)}
@@ -71,9 +78,15 @@ const Popup = () => {
               </div>
             </div>
 
-            <h2 className=" customFont mb-4 text-lg font-semibold text-center">
-              {popupContent}
-            </h2>
+            {isLoading ? (
+              <div className="flex justify-center items-center">
+                <div className="loader border-t-2 rounded-full border-gray-500 bg-gray-300 animate-spin aspect-square w-8 flex justify-center items-center text-yellow-700"></div>
+              </div>
+            ) : (
+              <h2 className="customFont mb-4 text-lg font-semibold text-center">
+                {popupContent}
+              </h2>
+            )}
           </div>
         </div>
       )}
